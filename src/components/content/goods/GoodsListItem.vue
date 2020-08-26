@@ -37,6 +37,7 @@ export default {
         //    }  
        },
        itemClick(){
+        // 路由跳转push是可返回的跳转，replace是不可在浏览器左上角返回的跳转，动态路由跳转的方式，携带id
           this.$router.push('/detail/'+this.goodsitem.iid)
           
        }

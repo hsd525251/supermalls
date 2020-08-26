@@ -32,7 +32,7 @@ export default {
    },
    methods:{
       imageLoad(){
-         //进行限制，只发出一次事件，
+         //进行限制，只发出一次事件，发出图片加载完成事件，可以在home页面计算高度了
           if(!this.isload)
           this.$emit('imgswipperload')
           this.isload=true

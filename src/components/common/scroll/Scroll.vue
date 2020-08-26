@@ -49,7 +49,7 @@ export default {
       }
    },
    methods:{
-        scrollTo(x,y,time=1000) { //上拉的位置
+        scrollTo(x,y,time=1000) { //返回到页面（x,y）的位置
            this.scroll && this.scroll.scrollTo(x ,y ,time)
        },
         finishPullUp(){  //完成加载，上拉加载更多

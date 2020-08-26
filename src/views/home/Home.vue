@@ -73,12 +73,14 @@ export default {
            itemImgListener:null,
        }      
    },
+   //回到页面调用    
    activated(){
       this.$refs.scroll.refresh() 
       this.$refs.scroll.scrollTo(0, this.saveY, 0)//第一个参数是x轴坐标，第二个参数是y轴坐标，
    //第三个参数是时间，就是经过多长时间滚动到那个位置
        
    },
+   //离开页面调用
    deactivated(){
      this.saveY = this.$refs.scroll.scroll.y
      //离开页面就销毁
@@ -93,9 +95,14 @@ export default {
         this.getHomeGoodsdatas('new')
         this.getHomeGoodsdatas('sell')
 
+
    },
    mounted(){
-     
+      // 利用防抖函数减少betterscroll刷新次数   
+      const refresh = debounce(this.$refs.scroll.refresh,100)
+      this.$bus.$on('itemImgLoad',()=>{
+         refresh() 
+      })
    },
     computed:{
        showgoods(){
@@ -175,7 +182,7 @@ export default {
 <style scoped>
     #home{
           /* padding-top: 44px;  */
-           height: 100vh;  /*100vh表示100%视口  */
+          height: 100vh;  /* 100vh表示100%视口  */
            
     } 
    

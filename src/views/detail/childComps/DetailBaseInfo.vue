@@ -1,4 +1,5 @@
 <template>
+<!-- Object.keys(goods).length !== 0"先判断这个对象是不是空的对象 -->
   <div v-if="Object.keys(goods).length !== 0" class="base-info">
     <div class="info-title">{{goods.title}}</div>
     <div class="info-price">
@@ -25,7 +26,10 @@
 		name: "DetailBaseInfo",
     props: {
 		  goods: {
-		    type: Object
+        type: Object,
+        default(){
+          return {}
+        }
       }
     }
 	}
