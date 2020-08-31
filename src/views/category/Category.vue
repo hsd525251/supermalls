@@ -106,8 +106,8 @@ export default {
      tabmenu(index){
       
         this.getsubcategorydatas(index)
-        
-        
+        this.$refs.scroll.scrollTo(0,0,50)
+        this.$refs.scroll.refresh() 
      },
      tabClick(index){
         switch (index){
