@@ -98,11 +98,11 @@ export default {
 
    },
    mounted(){
-      // 利用防抖函数减少betterscroll刷新次数   
-      const refresh = debounce(this.$refs.scroll.refresh,100)
-      this.$bus.$on('itemImgLoad',()=>{
-         refresh() 
-      })
+    //   // 利用防抖函数减少betterscroll刷新次数   
+    //   const refresh = debounce(this.$refs.scroll.refresh,100)
+    //   this.$bus.$on('itemImgLoad',()=>{
+    //      refresh() 
+    //   })
    },
     computed:{
        showgoods(){

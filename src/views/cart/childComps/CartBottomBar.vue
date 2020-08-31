@@ -77,6 +77,7 @@ export default {
        margin-right: 5px;
    }
    .price{
+       width: 100px;
        margin-left: 30px;
        flex: 1;
    }
